@@ -1,5 +1,4 @@
-Here’s a clean, simple **README.md** you can paste into your repo.
-It explains **what someone will learn** from the code you showed.
+
 
 ---
 
