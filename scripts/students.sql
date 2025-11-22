@@ -1,3 +1,4 @@
+-- creating table 
 CREATE TABLE students (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(20) NOT NULL,
@@ -6,4 +7,5 @@ CREATE TABLE students (
     course VARCHAR(10) NOT NULL,
     attend BOOLEAN DEFAULT TRUE
     -- // something to write up 
+  
 );
