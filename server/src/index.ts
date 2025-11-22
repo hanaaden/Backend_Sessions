@@ -7,9 +7,10 @@ import { pool, connectToDatabase } from "./database/db";
 
 //remove 
 console.log(" DB url loaded?", process.env.DATABASE_URL ? "yes" : "no");
-
+console.log("connected")
 
 const app = express();
+// aff
 const PORT = 3131;
 
 connectToDatabase();
