@@ -1,6 +1,6 @@
 # Full Backend Learning Repository
 
-Welcome to this repository! 🎉  
+Welcome to this repository!  
 
 Here, you will learn and explore **full backend development** using modern technologies and best practices. This repo is designed to guide you through **Express.js, TypeScript, PostgreSQL, middleware, authentication, and more**.
 
@@ -32,6 +32,8 @@ This repository contains multiple branches, each focusing on a different part of
 | `d.02`          | Express + TypeScript basic server setup |
 | `d.03`          | Express + PostgreSQL backend with controllers and routes |
 | `d.04`          | Middleware examples: age check, validation, authentication |
+
+and so on .............
 
 > Each branch is designed to teach a specific backend concept step by step.
 
