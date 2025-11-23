@@ -178,3 +178,136 @@ Understanding network protocols helps in:
 - Optimizing performance  
 
 These protocols form the backbone of modern computer networks, from small home networks to the global Internet.
+
+# Unified Network Communication Example
+
+This example shows a real-life scenario where **all major network
+protocols** work together at the same time.
+
+## Scenario: Hana Uploads a Photo to Instagram
+
+You are at home and want to upload a photo to Instagram. The following
+steps show how many protocols are involved.
+
+------------------------------------------------------------------------
+
+## 1. Physical & Data Link Layer
+
+These handle the actual connection from your device to the router and
+ISP.
+
+### **Wi-Fi / Ethernet (Layer 1 & 2)**
+
+-   Your phone sends electrical/radio signals.
+-   MAC addresses identify devices on the same local network.
+-   Frames move data inside your home network.
+
+------------------------------------------------------------------------
+
+## 2. Network Layer -- **IP**
+
+IP gives every device an address.
+
+-   Your phone has a private IP: `192.168.1.5`
+-   Your router has a public IP from your ISP.
+-   IP packets carry your photo data toward Instagram's servers.
+
+------------------------------------------------------------------------
+
+## 3. Transport Layer -- **TCP / UDP**
+
+### **TCP**
+
+Used for: - Uploading the photo - Logging into Instagram - Reliable
+delivery, retransmissions, ordering
+
+### **UDP**
+
+Used for: - Domain Name System (DNS) queries - Faster "fire-and-forget"
+messages
+
+------------------------------------------------------------------------
+
+## 4. Application Layer Protocols Working Together
+
+### **DNS** -- Resolve instagram.com
+
+Before uploading, your phone needs the server's IP.
+
+-   Your device sends a DNS query → "What is instagram.com?" (UDP)
+-   DNS server replies → `157.240.xx.xx`
+
+### **HTTPS (HTTP + TLS)**
+
+Used for login, browsing, uploading.
+
+-   Establish TLS handshake for encryption
+-   Photo is uploaded securely using HTTPS POST request
+
+### **DHCP** -- Gives your device an IP
+
+When you join Wi-Fi: - Your phone says: "I need an IP!" - Router gives:\
+- IP: `192.168.1.5`\
+- Gateway: `192.168.1.1`\
+- DNS server: `192.168.1.1`\
+- Uses UDP
+
+### **NAT** -- Router maps your private IP
+
+Your router turns:
+
+    192.168.1.5 → 10245 → Instagram Server
+
+into:
+
+    Public_IP → 10245 → Instagram Server
+
+### **ARP** -- Local MAC discovery
+
+Before your phone sends anything: - It asks: "Who has 192.168.1.1?"\
+- Router replies with its MAC address\
+Used only inside your local network.
+
+------------------------------------------------------------------------
+
+## Putting It All Together (Full Flow)
+
+1.  You join Wi-Fi → **DHCP** assigns IP\
+2.  Phone wants instagram.com → **DNS** resolves IP\
+3.  Phone prepares packets → **IP** + **TCP**\
+4.  Router uses **NAT** to send packets to the internet\
+5.  Phone finds router's MAC → **ARP**\
+6.  Data is sent to ISP → **Ethernet/Wi-Fi**\
+7.  Secure connection with Instagram → **HTTPS**\
+8.  Photo upload uses **HTTP POST** over **TCP**\
+9.  Instagram sends response → "Upload successful!"
+
+------------------------------------------------------------------------
+
+## Why This Example Is Useful
+
+-   It demonstrates **all core protocols working at the same time**\
+-   It shows **real network behavior in daily life**\
+-   It connects **theory with practice**
+
+------------------------------------------------------------------------
+
+## Summary Table
+
+  Purpose                    Protocol         Notes
+  -------------------------- ---------------- ----------------------------
+  Get IP                     DHCP             Uses UDP
+  Find MAC                   ARP              Local network only
+  Find instagram.com IP      DNS              Uses UDP
+  Send data reliably         TCP              Ordered, reliable
+  Addressing                 IP               Every packet needs it
+  Secure communication       HTTPS            HTTP + TLS
+  Local connection           Wi-Fi/Ethernet   Physical + data link layer
+  Map private to public IP   NAT              Router function
+
+------------------------------------------------------------------------
+
+## Final Result
+
+You uploaded a photo using **DHCP, DNS, ARP, NAT, IP, TCP, HTTPS,
+Wi-Fi/Ethernet** all working together at the same time.
