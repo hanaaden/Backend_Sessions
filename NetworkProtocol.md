@@ -311,3 +311,6 @@ Used only inside your local network.
 
 You uploaded a photo using **DHCP, DNS, ARP, NAT, IP, TCP, HTTPS,
 Wi-Fi/Ethernet** all working together at the same time.
+
+
+add if there is a network protocol left 
