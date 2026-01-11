@@ -25,7 +25,7 @@ export const getsinglegame = (req:Request , res : Response)=>{
 
 
 
-const game = games.find((b) => b.id === parseInt(id));
+const game = books.find((b) => b.id === parseInt(id as string));
 
 if(!game){
     res.status(404).send("game not found")
