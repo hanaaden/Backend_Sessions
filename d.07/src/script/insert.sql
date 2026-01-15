@@ -1,0 +1,1 @@
+INSERT INTO  games (GameName , description) VALUES ('PUBG' , 'very popular in this decade');

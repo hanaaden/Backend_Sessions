@@ -1,0 +1,5 @@
+CREATE TABLE games(
+  game_id SERIAL UNIQUE PRIMARY KEY,
+  GameName VARCHAR(255) NOT NULL,
+  description TEXT NOT NULL
+);
