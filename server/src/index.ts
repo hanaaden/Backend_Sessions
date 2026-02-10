@@ -5,16 +5,13 @@ import express from "express"
 import pool from "./config/db"
 import AddTask from "./routes/addTask"
 import DeleteTask from "./routes/deleteTask"
-
+import  GetAllTask  from "./routes/getAllTask"
+import UpdatesTask from "./routes/UpdateTask"
 
 const app = express()
 
 app.use(express.json())
-const PORT =3131
-
-app.get("/" , (req ,res)=>{
-    res.send("this is running")
-});
+const PORT =3131;
 
 (async ()=>{
     try {
@@ -29,6 +26,8 @@ app.get("/" , (req ,res)=>{
 
 app.use("/addtask" , AddTask)
 app.use("/delete" , DeleteTask )
+app.use("/getall" , GetAllTask )
+app.use("/update" , UpdatesTask )
 app.listen(PORT , ()=>{
     console.log("app is running")
 })
